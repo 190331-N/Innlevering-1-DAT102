@@ -65,7 +65,27 @@ public class Filmarkiv2 implements FilmarkivADT {
     }
 
     @Override
-    public Film[] soekTittel (String delstreng) {
+    public Film[] soekTittel(String delstreng) {
+        if (delstreng == null) {
+            return new Film[0];
+        }
+
+        ArrayList<Film> treff = new ArrayList<>();
+        LinearNode<Film> p = start;
+
+        while (p != null) {
+            Film f = p.data;
+            if (f != null && f.getTittel() != null && f.getTittel().contains(delstreng)) {
+                treff.add(f);
+            }
+            p = p.neste;
+        }
+
+        return treff.toArray(new Film[0]);
+    }
+
+    @Override
+    public Film[] soekProdusent(String delstreng) {
         if (delstreng == null) {
             return new Film[0];
         }
@@ -73,14 +93,13 @@ public class Filmarkiv2 implements FilmarkivADT {
         LinearNode<Film> p = start;
 
         while (p != null) {
-            film f = p.data;
-            if (f != null && f.getTittel()) != null && f.getTittel(.dontains(delstreng)) {
+            Film f = p.data;
+            if (f != null && f.getProdusent() != null && f.getProdusent().contains(delstreng)) {
                 treff.add(f);
             }
             p = p.neste;
         }
-
-        return treff.toArray(new Film [0]);
+        return treff.toArray(new Film[0]);
     }
 
     @Override
@@ -97,14 +116,8 @@ public class Filmarkiv2 implements FilmarkivADT {
             if (f != null && sjanger.equals(f.getSjanger())) {
                 teller++;
             }
-            p = p.neste
+            p = p.neste;
         }
         return teller;
     }
-
-    @Override
-    public boolean slettFilm (int filmnr) {
-        if (start == null) return false;
-    }
-
 }
