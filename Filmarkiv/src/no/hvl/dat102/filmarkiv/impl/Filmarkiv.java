@@ -27,7 +27,7 @@ public class Filmarkiv implements FilmarkivADT {
 
     @Override
     public void leggTilFilm(Film nyFilm) {
-        if (filmarkiv.length >= antall){
+        if (antall >= filmarkiv.length) {
             filmarkiv = Arrays.copyOf(filmarkiv, filmarkiv.length*2);
         }
         filmarkiv[antall] = nyFilm;
