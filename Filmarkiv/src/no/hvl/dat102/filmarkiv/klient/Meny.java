@@ -3,9 +3,10 @@
     import no.hvl.dat102.filmarkiv.adt.FilmarkivADT;
     import no.hvl.dat102.filmarkiv.impl.Film;
     import no.hvl.dat102.filmarkiv.impl.Sjanger;
+    import java.util.Scanner;
 
 
-    public class Meny {
+    public class Meny{
 
         private Tekstgrensesnitt tekst;
         private FilmarkivADT arkiv;
@@ -18,10 +19,12 @@
         public void start() {
             leggInnTestdata();
 
+            Scanner in = new Scanner(System.in);
+
             boolean fortsett = true;
             while (fortsett) {
                 skrivMeny();
-                int valg = tekst.lesInt("Velg: ");
+                int valg = in.nextInt();
 
                 switch (valg) {
                     case 1:
