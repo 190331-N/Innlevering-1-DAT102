@@ -22,10 +22,24 @@ public class Tekstgrensesnitt {
 
         System.out.println("Lanserings ar: ");
         int utAr = in.nextInt();
+        in.nextLine();
 
-        System.out.println("Sjanger: ");
-        String s = in.nextLine();
-        Sjanger sjanger = Sjanger.valueOf(s);
+        Sjanger sjanger = null;
+
+        while (sjanger == null) {
+            System.out.print("Sjanger (");
+            for (Sjanger sj : Sjanger.values()) {
+                System.out.print(sj + " ");
+            }
+            System.out.print("): ");
+
+            String s = in.nextLine();
+            sjanger = Sjanger.finnSjanger(s);
+
+            if (sjanger == null) {
+                System.out.println("Ugyldig sjanger. Prøv igjen.");
+            }
+        }
 
         System.out.println("Utgiver: ");
         String utgiver = in.nextLine();
