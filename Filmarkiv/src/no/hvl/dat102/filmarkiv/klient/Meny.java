@@ -33,17 +33,19 @@
                         break;
 
                     case 2:
-                        String delstreng = tekst.lesString("Delstreng i tittel: ");
-                        Film[] treff = arkiv.finnFilmDelstrengITittel(delstreng);
-                        tekst.skrivUtFilmer(treff);
+                        System.out.print("Delstreng i tittel: ");
+                        String tittelDelstreng = in.nextLine();
+                        tekst.skrivUtFilmDelstrengITittel(arkiv, tittelDelstreng);
                         break;
 
                     case 3:
-                        arkiv.slettFilm(tekst.lesInt("Filmnr som skal slettes: "));
+                        System.out.print("Delstreng i produsent: ");
+                        String produsentDelstreg = in.nextLine();
+                        tekst.skrivUtFilmProdusent(arkiv, produsentDelstreg);
                         break;
 
                     case 4:
-
+                        tekst.skrivUtStatistikk(arkiv);
                         break;
 
                     case 0:
