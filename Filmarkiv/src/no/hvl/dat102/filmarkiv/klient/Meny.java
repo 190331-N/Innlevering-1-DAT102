@@ -66,6 +66,7 @@
             System.out.println("3: Søk på produsent");
             System.out.println("4: Statistikk");
             System.out.println("0: Avslutt");
+            System.out.println();
         }
 
         private void leggInnTestdata() {

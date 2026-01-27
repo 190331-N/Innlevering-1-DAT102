@@ -31,7 +31,7 @@ public class Tekstgrensesnitt {
             for (Sjanger sj : Sjanger.values()) {
                 System.out.print(sj + " ");
             }
-            System.out.print("): ");
+            System.out.println("): ");
 
             String s = in.nextLine();
             sjanger = Sjanger.finnSjanger(s);
