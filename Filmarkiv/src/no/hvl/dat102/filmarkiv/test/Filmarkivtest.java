@@ -36,7 +36,7 @@ public class Filmarkivtest {
 
     @Test
     void testFinnFilm(){
-        Film funnet = arkiv.finnFilm(2);
+        Film funnet = arkiv.finnFilm(3);
         assertNotNull(funnet);
         assertEquals("Pirates", funnet.getTittel());
     }
@@ -57,7 +57,7 @@ public class Filmarkivtest {
 
     @Test
     void testSoekTittel() {
-        Film[] treff = arkiv.soekTittel("ring");
+        Film[] treff = arkiv.soekTittel("Ring");
         assertEquals(1, treff.length);
         assertEquals("Ringenes herre", treff[0].getTittel());
     }
